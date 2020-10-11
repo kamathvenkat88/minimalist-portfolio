@@ -1,0 +1,77 @@
+@media only screen and (min-width: 767px) {
+	.notification{
+		width: 20%;
+		left: 40%;
+	}
+
+	.logo{
+		display: flex;
+	}
+
+	.work{
+		padding: 20px;
+	}
+
+	.title{
+		font-size: 1.5em;
+		font-weight: 900;
+	}
+
+	.title-small{
+		font-size: 1em;
+		font-weight: 900;
+	}
+
+	.company{
+		font-size: 2em;
+		font-weight: 900;
+	}
+
+	.desp{
+		font-size: 1em;
+		font-weight: 700;
+	}
+
+	.flex{
+		display: flex;
+	}
+
+}
+
+@media only screen and (min-width: 1023px) {
+	.main{
+		width: 60vw;
+	}
+	.landing{
+		width: 90vw;
+	}
+	.text{
+		font-size: 6em;
+	}
+
+	.title{
+		font-size: 2em;
+		font-weight: 900;
+	}
+
+	.title-small{
+		font-size: 1em;
+		font-weight: 900;
+	}
+
+	.company{
+		font-size: 3em;
+		font-weight: 900;
+	}
+
+	.desp{
+		font-size: 1em;
+		font-weight: 700;
+	}
+	.popup{
+		height: 70vh;
+		width: 70vw;
+		top: 15vh;
+		left: 15vw;
+	}
+}

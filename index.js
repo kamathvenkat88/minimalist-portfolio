@@ -1,27 +1,3 @@
-function show(element){
-	document.querySelector(element).classList.remove('hide');
-	document.querySelector('.landing').classList.add('hide');
-	document.querySelector('.landing').style.marginTop = "100vh";
-	setTimeout(()=>{scrollUpSmoothAnimation(element)}, 100);
-}
-
-function home(){
-	var pages = document.querySelectorAll('.main');
-	for(page of pages){
-		classes = page.classList;
-		if(!classes.contains('hide')){
-			classes.add('hide');
-			page.style.marginTop = "100vh";
-		}
-	}
-	document.querySelector('.landing').classList.remove('hide');
-	setTimeout(()=>{scrollUpSmoothAnimation('.landing')}, 100);
-}
-
-function scrollUpSmoothAnimation(element){
-	document.querySelector(element).style.marginTop = "0px";
-}
-
 var exps = [
 {
 	'logo': 'https://media-exp1.licdn.com/dms/image/C510BAQF_zIelQWSBvw/company-logo_100_100/0?e=1609977600&v=beta&t=RVM5i0gEdH_ik7a95Sinw5tDIzZ5xMcC7TMjmPyY31c',
@@ -45,8 +21,54 @@ var exps = [
 	'envs': ['Vestibulum dapibus, mauris nec malesuada fames', 'Vestibulum dapibus, mauris nec malesuada fames', 'Vestibulum dapibus, mauris nec malesuada fames', 'Vestibulum dapibus, mauris nec malesuada fames']
 }]
 
+var notifText = '';
+
+if (window.screen.width < 769)
+    notifText = 'tap anywhere!';
+else
+    notifText = 'hover over the text.';
 
 var backElement = null;
+
+function show(element){
+	document.querySelector(element).classList.remove('hide');
+	document.querySelector('.landing').classList.add('hide');
+	document.querySelector('.landing').style.marginTop = "100vh";
+	setTimeout(()=>{scrollUpSmoothAnimation(element)}, 100);
+}
+
+function tap(){
+	if (window.screen.width < 769){
+		let navs1 = document.querySelectorAll('.one');
+		let navs2 = document.querySelectorAll('.two');
+		for(let i = 0; i < navs1.length; i++){
+			navs1[i].classList.toggle('hide');
+			navs2[i].classList.toggle('nav-intro');
+		}
+	}
+}
+
+function home(){
+	window.scrollTo(0, 0);
+	var pages = document.querySelectorAll('.main');
+	if(backElement)
+		back();
+	else{
+		for(page of pages){
+			classes = page.classList;
+			if(!classes.contains('hide')){
+				classes.add('hide');
+				page.style.marginTop = "100vh";
+			}
+		}
+		document.querySelector('.landing').classList.remove('hide');
+		setTimeout(()=>{scrollUpSmoothAnimation('.landing')}, 100);
+	}
+}
+
+function scrollUpSmoothAnimation(element){
+	document.querySelector(element).style.marginTop = "0px";
+}
 
 function createPopup(idx, element){
 	exp = exps[idx];
@@ -55,9 +77,12 @@ function createPopup(idx, element){
 		<div class="work">
 			<div class="text company">${exp.company}</div>
 			<div class="text title">${exp.post}</div>
+			<div style="display: flex;">
+				<div class="text title-small" style="text-align: right; margin-right: 2px; padding-right: 2px;">${exps[i].location}</div>
+				<div class="text title-small" style="padding-left: 4px; border-left: 1px solid #000;">${exps[i].year}</div>
+			</div>
 		</div>
 	</div>
-	<div class="work-desp text desp">${exp.location}, ${exp.year}</div>
 	<div class="work-desp">
 		<div class="text desp">
 			${exp.desp}
@@ -104,18 +129,27 @@ function addExps(){
 					<div class="work">
 						<div class="text company">${exps[i].company}</div>
 						<div class="text title">${exps[i].post}</div>
+						<div class="flex">
+							<div class="text title-small" style="margin-right: 2px; padding-right: 2px;">${exps[i].location}</div>
+							<div class="text title-small" style="padding-left: 4px; border-left: 1px solid #fff;">${exps[i].year}</div>
+						</div>
 					</div>
 				</div>
-			</div>`
+			</div><br>`
 		document.querySelector('.work').innerHTML += experience;
 	}
 }
 
 function back(){
-	document.querySelector('.popup-back').style.transform = 'scale(0)';
-	document.querySelector(backElement).style.filter = 'blur(0px)';
-
+	if(backElement){
+		document.querySelector('.popup-back').style.transform = 'scale(0)';
+		document.querySelector(backElement).style.filter = 'blur(0px)';
+		backElement = null;
+	}
 }
 
-setTimeout(()=>{scrollUpSmoothAnimation('.landing')}, 100);
+setTimeout(()=>{
+	scrollUpSmoothAnimation('.landing');
+	document.querySelector('.notification').innerHTML = notifText;
+}, 100);
 addExps();

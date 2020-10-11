@@ -2,39 +2,43 @@
 	<html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="mobile.css">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>Venkat Kamath</title>
 	</head>
 	<body>
-			<div onclick="home()" class='outer'>
-				<div></div>
-				<div></div>
-			</div> 
-		<div class="landing main">
-			<div class="part">
-				<div class="intro">
-					<h1 class="intro-text text">
-						<a onclick="show('.about')"><span class="one">Hello,</span><span class="two">About</span></a>
-					</h1>
-					<h1 class="intro-text text">			
-						<a onclick="show('.work')"><span class="one">I am</span><span class="two">Work</span></a>
-
-
-					</h1>
-					<h1 class="intro-text text">
-						<a onclick="show('.contact')"><span class="one">Venkat.</span><span class="two">Contact</span></a>
-					</h1>
+		<div onclick="home()" class='outer'>
+			<div></div>
+			<div></div>
+		</div> 
+		<div class="landing main" onclick="tap()">
+			<div class="flex-box">
+				<div class="part">
+					<div class="intro">
+						<h1 class="intro-text text">
+							<a onclick="show('.about')"><span class="one">Hello,</span><span class="two" style="animation-delay: 0s;">About</span></a>
+						</h1>
+						<h1 class="intro-text text">			
+							<a onclick="show('.work')"><span class="one">I am</span><span class="two" style="animation-delay: 0.5s;">Work</span></a>
+						</h1>
+						<h1 class="intro-text text">
+							<a onclick="show('.contact')"><span class="one">Venkat.</span><span class="two" style="animation-delay: 1s;">Contact</span></a>
+						</h1>
+					</div>
+				</div>
+				<div class="image part">
+				
 				</div>
 			</div>
-			<div class="image part">
-			
+			<div class="notification">
+				hover over the text.
 			</div>
 		</div>
 
 
 		<div class="about main hide">
 			<div class="part">
-				<h1 class="text">I enjoy working with and <br>managing tech.</h1>
+				<h1 class="text">I enjoy working with and managing tech.</h1>
 			</div>
 		</div>
 
@@ -46,7 +50,7 @@
 
 		<div class="contact main hide">
 			<div class="part">
-				<h1 class="text">Contact me...</h1>
+				<h1 class="text">Want to work with me?</h1>
 			</div>
 		</div>
 
