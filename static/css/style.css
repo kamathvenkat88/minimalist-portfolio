@@ -53,6 +53,13 @@ html,body {
 	transition: 1s;
 }
 
+.mob-flex{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
 .flex-box a{
 	flex-basis: calc(100%/3);
 }
@@ -209,8 +216,9 @@ html,body {
 
 
 .work-experience{
-	width: 100%;
+	width: auto;
 	opacity: 0;
+	margin-bottom: 20px;
 }
 
 .logo{
@@ -427,12 +435,17 @@ h1{
 
 .skills{
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	justify-content: center;
-	height: 150px;
+	height: auto;
 	width: 90%;
 	margin: 0 auto;
 	cursor: pointer;
+}
+
+.mobile-hide{
+	display: none;
 }
 
 .skill-card{

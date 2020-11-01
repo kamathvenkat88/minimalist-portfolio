@@ -46,6 +46,21 @@
 	.article div:nth-child(2){
 		width: 30%;
 	}
+	.skills{
+		flex-wrap: nowrap;
+	}
+
+	.mobile-hide{
+		display: block;
+	}
+
+	.mob-flex{
+		display: block;
+	}
+
+	.work-experience{
+		width: 100%;
+	}
 
 }
 

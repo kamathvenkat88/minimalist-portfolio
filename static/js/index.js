@@ -137,7 +137,7 @@ function addExps(){
 				<div class="logo" onclick="createPopup(${i}, '.work');">
 					<img style="height: 100px; object-fit: contain;" src="${exps[i].logo}">
 					<div class="work">
-						<div class="text company">${exps[i].company}</div>
+						<div class="text company mobile-hide">${exps[i].company}</div>
 						<div class="addition">
 							<div class="text title">${exps[i].post}</div>
 							<div class="flex">
@@ -147,7 +147,7 @@ function addExps(){
 						</div>
 					</div>
 				</div>
-			</div><br>`;
+			</div>`;
 		document.querySelector('.work .part2').innerHTML += experience;
 	}
 }
