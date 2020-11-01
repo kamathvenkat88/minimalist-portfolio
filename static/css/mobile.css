@@ -17,6 +17,10 @@
 		font-weight: 900;
 	}
 
+	ul.title li{
+		margin-bottom: 1.5em;
+	}
+
 	.title-small{
 		font-size: 1em;
 		font-weight: 900;
@@ -62,6 +66,10 @@
 		width: 100%;
 	}
 
+	.work-experience:hover .logo{
+		transform: translateX(40px);
+	}
+
 }
 
 @media only screen and (min-width: 1023px) {
@@ -78,6 +86,9 @@
 	.title{
 		font-size: 2em;
 		font-weight: 900;
+	}
+	ul.title li{
+		margin-bottom: 2em;
 	}
 
 	.title-small{

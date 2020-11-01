@@ -60,8 +60,14 @@ window.onscroll = function(){
 			delay += 0.2;
 		}
 	}
-	if(currentScroll == 0)
+	if(currentScroll == 0){
+        document.querySelector('.down').style.transform = 'rotate(270deg)';
 		scrollIdx = 1;
+	}
+	if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        document.querySelector('.down').style.transform = 'rotate(90deg)';
+        scrollIdx = 0;
+    }
 }
 
 if (window.screen.width < 769){
@@ -134,7 +140,7 @@ function scrollUpSmoothAnimation(element){
 function addExps(){
 	for(i in exps){
 		let experience = `<div class="work-experience">
-				<div class="logo" onclick="createPopup(${i}, '.work');">
+				<div class="logo">
 					<img style="height: 100px; object-fit: contain;" src="${exps[i].logo}">
 					<div class="work">
 						<div class="text company mobile-hide">${exps[i].company}</div>
@@ -155,9 +161,16 @@ function addExps(){
 function scrollDown(){
 	let element = document.querySelectorAll(currentElement + ' .part');
 	if(element.length > 1){
+		length = element.length;
 		element = element[scrollIdx];
 		element.scrollIntoView();
 		scrollIdx += 1;
+		scrollIdx %= length;
+		if(scrollIdx == 0)
+        	document.querySelector('.down').style.transform = 'rotate(90deg)';
+        if(scrollIdx == 1)
+        	document.querySelector('.down').style.transform = 'rotate(270deg)';
+
 	}
 }
 

@@ -218,7 +218,7 @@ html,body {
 .work-experience{
 	width: auto;
 	opacity: 0;
-	margin-bottom: 20px;
+	margin: 10px;
 }
 
 .logo{
@@ -229,7 +229,6 @@ html,body {
 
 .work-experience:hover .logo{
 	color: #FF6500;
-	transform: translateX(40px);
 }
 
 .hidden{
@@ -299,7 +298,6 @@ h1{
 
 .work-experience:hover .addition{
 	display: block;
-	animation: nav-intro 0.5s linear forwards;	
 }
 
 .article{
@@ -474,4 +472,12 @@ h1{
 }
 .cert:hover{
 	transform: scale(1.1);
+}
+
+ul.title{
+	padding: 0px;
+}
+ul.title li{
+	margin-bottom: 1em;
+	list-style-type: none;
 }
