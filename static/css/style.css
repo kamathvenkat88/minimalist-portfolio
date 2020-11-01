@@ -1,0 +1,464 @@
+@font-face {
+	font-family: 'georgia';
+	font-style: normal;
+	font-weight: normal;
+	src: local('Georgia Regular'), url('georgia.woff') format('woff');
+}
+
+body{
+	background-color: #000;
+	color: #fcfcfc;
+	font-family: sans-serif;
+}
+
+html,body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+.main{
+	width: 80vw;
+	margin: auto;
+	transition: 1s;
+	margin-top: 100vh;
+	word-wrap: break-word;
+}
+
+.notification{
+	width: 60%;
+	height: 30px;
+	line-height: 30px;
+
+	position: absolute;
+	bottom: 20px;
+	left: 20%;
+	
+	background-color: rgb(255,255,255,0.1);
+	border-radius: 15px/15px;
+	font-size: 1rem;
+	font-family: monospace;
+	text-align: center;
+}
+
+.landing{
+	width: 90vw;
+}
+
+.flex-box{
+	width: 90vw;
+	display: flex;
+	transition: 1s;
+}
+
+.flex-box a{
+	flex-basis: calc(100%/3);
+}
+
+.flex-box a img{
+	width: 90px;
+	height: 90px;
+	object-fit: contain;
+	margin: auto;
+}
+
+
+.part{
+	width: 100%;
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+}
+
+.intro{
+	margin: 0 auto;
+}
+
+.intro-text{
+	margin: 0 auto;
+	transition: 1s;
+	cursor: pointer;
+}
+
+.intro-text:hover{
+	color: #FF6500;
+	transform: translateX(40px);
+}
+
+.two{
+	display:none;
+}
+
+.intro-text:hover .two{
+	display: block;
+}
+
+.intro-text:hover .one{
+	display: none;
+}
+
+.nav-intro{
+	display: block;
+	opacity: 0;
+	animation: nav-intro 0.5s linear forwards;	
+}
+
+.landing .part{
+	width: 40vw;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-track {
+  background: #EEF5F9; 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2F3129; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #272822; 
+}
+
+.vertical-center{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.outer{
+	display: flex;
+	position: fixed;
+	top: 72px;
+	right: 72px;
+	cursor: pointer;
+	z-index: 1000;
+}
+
+.outer div{
+	width: 10px;
+	height: 10px;	
+	transform: rotate(45deg);
+	border: 3px solid #FF6500;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	opacity: 0;
+	transition: 0.25s;
+	animation: pulse 1s linear infinite;
+}
+
+.outer div:nth-child(2){
+	animation-delay: 0.5s;
+	margin-left: -2px;
+}
+
+.outer div:nth-child(1){
+	animation-delay: 0.75s;
+}
+
+.outer:hover div{
+	animation: none;
+	opacity: 1;	
+}
+
+
+.down{
+	display: flex;
+	position: fixed;
+	bottom: 72px;
+	left: 72px;
+	cursor: pointer;
+	z-index: 1000;
+	transform: rotate(270deg);
+}
+
+.down div{
+	width: 10px;
+	height: 10px;	
+	transform: rotate(45deg);
+	border: 3px solid #FF6500;
+	border-top-color: transparent;
+	border-right-color: transparent;
+	opacity: 0;
+	transition: 0.25s;
+	animation: pulse 1s linear infinite;
+}
+
+.down div:nth-child(2){
+	animation-delay: 0.5s;
+	margin-left: -2px;
+}
+
+.down div:nth-child(1){
+	animation-delay: 0.75s;
+}
+
+.down:hover div{
+	animation: none;
+	opacity: 1;	
+}
+
+
+.work-experience{
+	width: 100%;
+	opacity: 0;
+}
+
+.logo{
+	padding: 20px 20px 0 20px;
+	cursor: pointer;
+	transition: 1s;
+}
+
+.work-experience:hover .logo{
+	color: #FF6500;
+	transform: translateX(40px);
+}
+
+.hidden{
+	display: none;
+	opacity: 0;
+	transition: 1s;
+	transform-origin: top;
+}
+
+.logo img{
+	object-fit: contain;
+}
+
+.responsibilities{
+	padding: 20px;
+}
+
+.experience{
+	padding: 20px;
+}
+
+.work-desp{
+	width: 80%;
+	padding: 20px 20px 0 20px;
+	text-align: justify;
+}
+
+.text{
+	font-family: sans-serif;
+	font-size: 4em;
+}
+
+h1{
+	display: block;
+}
+#contact-text{
+	display: block;
+	font-family: sans-serif;
+	font-size: 4em;
+	margin-bottom: 50px;
+}
+
+.title{
+	font-size: 1em;
+	font-weight: 900;
+	
+}
+
+.title-small{
+	font-size: 0.8em;
+	font-weight: 900;
+}
+
+.company{
+	font-size: 1.5em;
+	font-weight: 900;
+}
+
+.desp{
+	font-size: 0.8em;
+	font-weight: 700;
+}
+
+.addition{
+	display: none;
+}
+
+.work-experience:hover .addition{
+	display: block;
+	animation: nav-intro 0.5s linear forwards;	
+}
+
+.article{
+	width: 60vw;
+	height: auto;
+	padding: 20px;
+	font-family: sans-serif;
+	background-color: #2E3034;
+	text-decoration: none;
+	color: white;
+	transition: 1s;
+	display: block;
+	margin: auto;
+	margin-bottom: 0px;
+
+	cursor: pointer;
+}
+.article h2{
+	margin-bottom: 5px;
+}
+.article p{
+	color: #f2f2f2;
+	margin-top: 2px;
+	font-size: 1em;
+}
+
+.vertical-center{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center; 
+}
+
+.article img{
+	width: 100%;
+	height: 100%;
+	max-width: 200px; 
+	object-fit: contain;
+}
+
+.article div{
+	display: block;
+	padding: 10px;
+}
+
+.article div{
+	width: 100%;
+}
+
+.article:hover{
+	opacity: 0.5;
+}
+
+.center{
+	display: block;
+	margin: 0 auto;
+}
+
+.author{
+	color: #f2f2f2;
+}
+
+.date{
+	position: relative;
+	margin-right: 15px; 
+}
+.date::after{
+	content: '';
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	top: 0;
+	right: -15px;
+	margin: 5px;
+	border-radius: 50%;
+	background-color: #f2f2f2;
+}
+
+
+h1{
+	font-family: sans-serif;
+}
+
+@keyframes pulse {
+	0%			{ opacity: 0;}
+	10%			{opacity: 0; }
+	50%	      {opacity: 1; }
+	90%			{opacity: 0; }
+	100%		{ opacity: 0;}
+
+}
+
+@keyframes flash{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 0.5;
+	}
+	100%{
+		opacity: 1;
+	}
+}
+
+
+@keyframes nav-intro{
+	0%{
+		opacity: 0;
+		color: #FFF;
+		transform: translateX(-10px);
+	}
+	100%{
+		opacity: 1;
+		color: #FF6500;
+		transform: translateX(0px);
+	}
+}
+
+@keyframes move-in-fade{
+	0%{
+		opacity: 0;
+		transform: translateX(-80px);
+	}
+	100%{
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+.hide{
+	display: none;
+}
+
+.skills{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 150px;
+	width: 90%;
+	margin: 0 auto;
+	cursor: pointer;
+}
+
+.skill-card{
+	margin: 10px;
+    padding: 10px;
+    transition: 0.3s;
+	height: 150px;
+	flex: 1 1 0px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.skill {
+    height: 80px;
+}
+
+.skill-card:hover .skill-text {
+    color: rgba(255, 255, 255, 1);
+}
+
+.cert{
+	transition: 0.5s;
+}
+.cert:hover{
+	transform: scale(1.1);
+}
